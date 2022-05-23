@@ -1,9 +1,13 @@
 {% extends "layout.html" %}
 {% block content %}
-    {% for post in posts %} 
-        <h1>{{ post.title }}</h1>
-        <p>By {{ post.author }} on {{ post.posted_on}}</p>
-        <p>{{ post.content }}</p>
-    {% endfor %}
+    <body>
+        <form action = "http://127.0.0.1:5000/upload" method = "POST" enctype = "multipart/form-data">
+            <span style = "color:red"> 
+                <b style="font-size: 20px">Upload your file below to identify tags : <b /> <br />
+            </span>
+            <hr />
+            <input type=file name=file>
+            <input type=submit value=Upload>
+        </form>
+    </body>
 {% endblock %}
-</html>
